@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-size: 30px;
+        width: 100%;
+      }
+      section {
+        width: 800px;
+        margin: 0 auto;
+      }
+      input {
+        width: 180px;
+        height: 30px;
+        font-size: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h1>Festa vip</h1>
+      <h2>Bem vindo a festa senhor(a):</h2>
+
+      <input type="text" placeholder="Digite seu nome " id="nome" />
+      <h2>Quem te convidou para essa festa</h2>
+      <input type="text" name="convite" id="verifica" />
+      <input type="button" value="verificar da pessoa" onclick="verificar()" />
+
+      <h2>Você está permitido a entrada</h2>
+      <label for="pesquisando" id="resposta"></label>
+    </section>
+    <script>
+      function verificar(nomes) {
+        por = convidado(nomes);
+        nome = document.querySelector("#nome").value;
+        nomesConvidados = ["raquel", "daiana", "everton", "mara", "debora"];
+        if (nomesConvidados.includes(nome) && por) {
+          resposta = document.getElementById("resposta").innerText =
+            "vc pode entrar";
+        } else {
+          resposta = document.getElementById("resposta").innerText =
+            "vc não pode entrar";
+        }
+      }
+      function convidado() {
+        verifica = document.querySelector("#verifica").value;
+        por = ["jose", "maria", "joao"];
+        if (por.includes(verifica)) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>
